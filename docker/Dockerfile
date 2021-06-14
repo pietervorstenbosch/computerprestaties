@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM opencilk:v1.0
 
 RUN apt update && \
     apt install -y software-properties-common && \

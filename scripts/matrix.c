@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/time.h>
+#include <cilk/cilk.h>
 
 #define n 2048
 double A[n][n];
@@ -25,7 +26,7 @@ C[i][j] = 0;
 struct timeval start;
 struct timeval end;
 gettimeofday(&start, NULL);
-for (int i = 0; i < n; ++i) {
+cilk_for (int i = 0; i < n; ++i) {
 for (int j = 0; j < n; ++j) {
 for (int k = 0; k < n; ++k) {
 C[i][j] += A[i][k] * B[k][j];

@@ -87,3 +87,13 @@ docker run --cpus=1 --memory=3g -it computerprestaties bash -c 'java -cp . matri
 
 Vervang de inhoud tussen de 'qoutes' met ander varianten van de testen
 
+## Werken met OpenCilk (c multiuthreading)
+
+- Download the prefab container
+
+en draai:
+
+```bash
+clang -o matrix-multithread -fopencilk -O3 matrix.c && ./matrix-multithread
+```
+
