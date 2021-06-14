@@ -87,9 +87,10 @@ docker run --cpus=1 --memory=3g -it computerprestaties bash -c 'java -cp . matri
 
 Vervang de inhoud tussen de 'qoutes' met ander varianten van de testen
 
-## Werken met OpenCilk (c multiuthreading)
+## Werken met OpenCilk (c multi-threading)
 
-- Download the prefab container
+- Download the prefab container (https://github.com/OpenCilk/opencilk-project/releases/download/opencilk%2Fv1.0/docker-opencilk-v1.0.tar.gz)
+- `docker load < /path/to/docker-opencilk-v1.0.tar.gz`
 
 en draai:
 
