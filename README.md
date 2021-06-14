@@ -4,7 +4,6 @@
 - Dockerfile definitie
 - Hoe werkt dit? Handige commando's met uitleg
 
-
 ## Bouwen van de container
 
 ```bash
@@ -17,7 +16,11 @@ docker build . -f docker/Dockerfile -t computerprestaties
 docker run --cpus=1 --memory=3g -it computerprestaties bash
 ```
 
-Hierna krijg je een shell prompt vban de ubuntu container (je eigen linux server). Je wordt afgeleverd in de `/opt/scripts` directory en kan de scripts gaan draaien met de onderstaande commando's
+Hierna krijg je een shell prompt van de ubuntu container (je eigen linux server). Je wordt afgeleverd in de `/opt/scripts` directory en kan de scripts gaan draaien met de onderstaande commando's
+Het ziet er als volgt uit:
+```bash
+root@10b9a46c0255:/opt/scripts# 
+```
 
 Je kan met de resources spelen om te kijken naar de effecten.
 
@@ -42,3 +45,12 @@ Bijvoorbeeld:
 ```bash
 gcc -o matrix matrix.c && ./matrix
 ```
+
+### Tips
+Wil je niet in de linux container hoeven rond te snuffelen? Gebruik dan:
+```bash
+docker run --cpus=1 --memory=3g -it computerprestaties bash -c 'java -cp . Matrix.java'
+```
+
+Vervang de qoutes met wat je wil
+

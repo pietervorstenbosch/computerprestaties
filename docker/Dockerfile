@@ -6,7 +6,8 @@ RUN apt update && \
     apt update && \
     apt install -y python3.8 && \
     apt install -y openjdk-11-jdk && \
-    apt install -y build-essential
+    apt install -y build-essential && \
+    apt install -y vim
 
 RUN mkdir /opt/scripts
 
