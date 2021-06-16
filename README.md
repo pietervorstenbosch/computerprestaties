@@ -4,6 +4,12 @@
 - Dockerfile definitie
 - Hoe werkt dit? Handige commando's met uitleg
 
+## Docker installeren
+
+Docker downloaden: https://www.docker.com/products/docker-desktop
+Docker Installeren voor Windows of Mac
+Werken vanuit Terminal (Mac) of Terminal (Windows, PowerShell) 
+
 ## Bouwen van de container
 
 ```bash
