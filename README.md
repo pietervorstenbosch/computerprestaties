@@ -6,8 +6,10 @@
 
 ## Docker installeren
 
-Docker downloaden: https://www.docker.com/products/docker-desktop
-Docker Installeren voor Windows of Mac
+Docker downloaden: https://www.docker.com/products/docker-desktop.
+
+Docker Installeren voor Windows of Mac.
+
 Werken vanuit Terminal (Mac) of Terminal (Windows, PowerShell) 
 
 ## Bouwen van de container
