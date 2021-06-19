@@ -34,6 +34,6 @@ C[i][j] += A[i][k] * B[k][j];
 }
 gettimeofday(&end, NULL);
 printf("%0.6f\n", tdiff(&start, &end));
-print n
+printf(n)
 return 0;
 }
