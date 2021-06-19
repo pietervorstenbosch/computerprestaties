@@ -3,7 +3,7 @@
 - Docker installeren op de desktop
 - Terminal installeren, alleen voor Windows
 - Opbouwen van de container (Standaard Testomgeving)
-- Draaien van de container 
+- Starten van de container en testen
     - Commando's om de verschillende talen te testen 
 - Direct draaien van de testen (je hoeft niet in de container te werken) 
     - Commando's om de verschillende talen te testen 
@@ -12,13 +12,9 @@
 -Map Docker met de dockerfile voor de Standaard Testomgeving
 -Map Scripts met de volgende programma's
 (Matrixberekening met n=1024)
-  matrix1024.c
-  matrix1024.java
-  matrix1024.py
-(Matrixberekening met n=2048)
-  matrix2048.c
-  matrix2048.java
-  matrix2048.py
+  matrix.c
+  matrix.java
+  matrix.py
 -README.md
     
 ## Docker installeren
@@ -35,7 +31,7 @@ cd /path/to/git/computerprestaties
 docker build . -f docker/Dockerfile -t computerprestaties
 ```
 
-## Draaien van de container
+## Starten van de container
 Je zet de container (De Standaard testomgeving) aan met het volgende commando
 ```bash
 docker run --cpus=1 --memory=3g -it computerprestaties bash
@@ -47,35 +43,24 @@ Het ziet er als volgt uit:
 root@10b9a46c0255:/opt/scripts# 
 ```
 
-### Draaien van het java script met n=1024
+### Testen van het java script met n=1024
 ```bash
-java -cp . matrix1024.java
+java -cp . matrix.java
 ```
 
-### Draaien van het python script met n=1024
+### Testen van het python script met n=1024
 ```bash
-python3.8 matrix1024.py
+python3.8 matrix.py
 ```
 
-### Draaien van het C script met n=1024
+### Testen van het C script met n=1024
 ```bash
-gcc -O3 -o matrix matrix1024.c && ./matrix
+gcc -O3 -o matrix matrix.c && ./matrix
 ```
 
-### Draaien van het java script met n=2048
-```bash
-java -cp . matrix2048.java
-```
+### Testen van het java script met n=2048
+Verander in de programma's de waarde van N in 2048. Let op de testen duren echt langer.
 
-### Draaien van het python script met n=2048
-```bash
-python3.8 matrix2048.py
-```
-
-### Draaien van het C script met n=2048
-```bash
-gcc -O3 -o matrix matrix2048.c && ./matrix
-```
 
 Je kan met de resources spelen om te kijken naar de effecten. Die Resources vind je in Docker->Preferences->Resources
 
