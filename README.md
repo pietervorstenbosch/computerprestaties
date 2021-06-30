@@ -101,7 +101,7 @@ test-2
 We gaan tiling testen met de taal C, n=2048 en verschillende tile maten.
 
 ```bash
-clang -O3 -o matrix_tile_4  test-4/matrix_tile_4.c && ./matrix_tile_4
+clang -O3 -o matrix_tile_4  test-3/matrix_tile_4.c && ./matrix_tile_4
 ```
 Test nu ook de andere tile grootes in de directory `test-3` met een soortgelijk commando.
 
