@@ -9,18 +9,18 @@
     - Commando's om de verschillende talen te testen 
     
 ## Wat staat er in de GitHub Computerprestaties
--Map Docker met de dockerfile voor de Standaard Testomgeving
--Map Scripts met de volgende programma's
+- Map Docker met de dockerfile voor de Standaard Testomgeving
+- Map Scripts met de volgende programma's
 (Matrixberekening met n=1024)
   matrix.c
   matrix.java
   matrix.py
--README.md
+- README.md
     
 ## Docker installeren
--Docker downloaden: https://www.docker.com/products/docker-desktop.
--Docker Installeren voor Windows of Mac.
--Werken vanuit Terminal (Mac) of Terminal (Windows, PowerShell) 
+- Docker downloaden: https://www.docker.com/products/docker-desktop.
+- Docker Installeren voor Windows of Mac.
+- Werken vanuit Terminal (Mac) of Terminal (Windows, PowerShell) 
  Voor Windows Update naar WSL2 gebruik de aanwijzingen op de site: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 ## Opbouwen van de container (Standaard Testomgeving)
