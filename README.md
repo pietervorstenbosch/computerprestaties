@@ -26,64 +26,96 @@
 ## Opbouwen van de container (Standaard Testomgeving)
 De Dockerfile is om de container te bouwen. Zorg dat je pad in de terminal wijst naar de subdirectorie computerprestaties. Het commando dat begint met: docker build.... bouwt de container op
 
+### Werken met OpenCilk (c multi-threading)
+Om te kunnen werken met de OpenCilk base container moeten we eerst de container in onze lokale docker registry laden. We doen dit door eerst de OpenCilk image te downloaden (https://github.com/OpenCilk/opencilk-project/releases/download/opencilk%2Fv1.0/docker-opencilk-v1.0.tar.gz) en daarna deze met het `docker load` commando in te laden:
+
+```bash
+docker load < /path/to/docker-opencilk-v1.0.tar.gz
+```
 ```bash
 cd /path/to/git/computerprestaties
 docker build . -f docker/Dockerfile -t computerprestaties
 ```
-
 ## Starten van de container
 Je zet de container (De Standaard testomgeving) aan met het volgende commando
 ```bash
 docker run --cpus=1 --memory=3g -it computerprestaties bash
 ```
+Hierna krijg je een shell prompt van de ubuntu container (je eigen linux server). Je wordt afgeleverd in de `/opt/scripts` directory en kan de testen gaan uitvoeren.
 
-Hierna krijg je een shell prompt van de ubuntu container (je eigen linux server). Je wordt afgeleverd in de `/opt/scripts` directory en kan de scripts gaan draaien met de onderstaande commando's
 Het ziet er als volgt uit:
 ```bash
-root@10b9a46c0255:/opt/scripts# 
+root@10b9a46c0255:/opt/scripts#
 ```
 
-### Testen van het java script met n=1024
+## Test 1: Welke taal is het snelste?
+
+De test scripts komen met verschillende n-waarde, hoe groter de n hoe langer de berekeningen. Voor n=1024:
+
+### Java
+
 ```bash
-java -cp . matrix.java
+java -cp . test-1/matrix1024.java
 ```
+### Python
 
-### Testen van het python script met n=1024
 ```bash
-python3.8 matrix.py
+python3.8 test-1/matrix1024.py
 ```
+### C
 
-### Testen van het C script met n=1024
 ```bash
-gcc -O3 -o matrix matrix.c && ./matrix
+clang -O3 -o matrix1024 test-1/matrix1024.c && ./matrix1024
 ```
-
-### Testen van het java script met n=2048
-Verander in de programma's de waarde van N in 2048. Let op de testen duren echt langer.
-
+### Testen van de scripts met n=2048
+Gebruik dezelfde soort commando's maar de scripts met een grotere N (n=2048). Let op de testen duren echt langer.
 
 Je kan met de resources spelen om te kijken naar de effecten. Die Resources vind je in Docker->Preferences->Resources
+Probeer ook eens geen optimalisatie toe te passen en kijk naar het resultaat.
 
 Bij C is de optimalisatie level 3 gebruikt. Probeer ook eens geen optimalisatie of level 1 en 2 optimalisatie toe te passen en kijk naar het resultaat.
 
 Geen Optimalisatie:
 ```bash
-gcc -o matrix matrix1024.c && ./matrix
+clang -o matrix1024 test-1/matrix1024.c && ./matrix1024
 ```
-Optimalisatie level 1:
-```bash
-gcc -O1 -o matrix matrix1024.c && ./matrix
-```
-Optimalisatie level 2:
-```bash
-gcc -O2 -o matrix matrix1024.c && ./matrix
-```
+## Test 2: Welke volgorde in nesting is het snelst?
+We gaan de nesting testen met de taal C en n=2048.
 
-## Direct draaien van de testen (je hoeft niet in de container te werken)
-Wil je niet in de linux container hoeven rond te snuffelen? Gebruik dan:
+### Variant IJK
+
 ```bash
-docker run --cpus=1 --memory=3g -it computerprestaties bash -c 'java -cp . matrix1024.java'
+clang -O3 -o matrixIJK test-2/matrixIJK.c && ./matrixIJK
 ```
+Test nu ook de andere varianten in de directory `test-2` met een soortgelijk commando.
+```bash
+test-2
+|-- matrixIJK.c
+|-- matrixIKJ.c
+|-- matrixJIK.c
+|-- matrixJKI.c
+|-- matrixKIJ.c
+`-- matrixKJI.c
+```
+## Test 3: Tiling
+We gaan tiling testen met de taal C, n=2048 en verschillende tile maten.
 
-Vervang de inhoud tussen de 'qoutes' met ander varianten van de testen
+```bash
+clang -O3 -o matrix_tile_4  test-4/matrix_tile_4.c && ./matrix_tile_4
+```
+Test nu ook de andere tile grootes in de directory `test-3` met een soortgelijk commando.
 
+```bash
+test-3
+|-- matrix_tile_16.c
+|-- matrix_tile_32.c
+|-- matrix_tile_4.c
+|-- matrix_tile_64.c
+`-- matrix_tile_8.c
+```
+## Test 4: Parallel processing in 1 loop
+We gaan gebruik maken van paralelle processing m.b.v. OpenCilk. ... verder uitleggen ...
+
+```bash
+clang -o matrix_i_loop -fopencilk -O3 test-4/matrix_i_loop.c && ./matrix_i_loop
+```

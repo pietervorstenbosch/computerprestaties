@@ -2,7 +2,7 @@ import random
 
 from time import *
 
-n = 1024
+n = 2048
 
 A =  [[random.random()
 
