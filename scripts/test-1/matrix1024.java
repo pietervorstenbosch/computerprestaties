@@ -1,6 +1,8 @@
+package com.company;
 import java.util.Random;
 
-class Matrix {
+
+class mm_java {
 static int n = 1024;
 static double[][] A = new double[n][n];
 static double[][] B = new double[n][n];
