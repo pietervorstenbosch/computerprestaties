@@ -118,5 +118,5 @@ We gaan gebruik maken van parallelle processing m.b.v. OpenCilk. Dat kan natuurl
 Uit Test 2 heb je gemerkt dat de IJK variant behoorlijk trager is dan de IKJ variant. We gaan voor beide varianten kijken wat de snelheidswinst is als ke de eerste loop, de tweede loop en de derde loop parallel laat verlopen.
 
 ```bash
-clang -o matrix_i_loop -fopencilk -O3 test-4/matrix_i_loop.c && ./matrix_i_loop
+clang -o IKJ_matrix_i_loop -fopencilk -O3 test-4/IKJ_matrix_i_loop.c && ./IKJ_matrix_i_loop
 ```
