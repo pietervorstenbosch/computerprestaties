@@ -9,15 +9,24 @@
 ## Wat staat er in de GitHub Computerprestaties
 - Map Docker met de dockerfile voor de Standaard Testomgeving
 - Map Scripts met de volgende subdirectories:
-    - test1
-         -   matrix1024.c
-         -   matrix1024.java
-         -   matrix1024.py
+    - test1 Snelste Taal
+         - matrix1024.c
+         - matrix1024.java
+         - matrix1024.py
          -    
-         -   matrix2048.c
-         -   matrix2048.java
-         -   matrix2048.py   
+         - matrix2048.c
+         - matrix2048.java
+         - matrix2048.py   
     - test2
+        - matrixIJK.c
+        - matrixJIK.c
+        - matrixJKI.c
+        - matrixIKJ.c
+        - matrixKIJ.c
+        - matrixKJI.c
+
+![image](https://user-images.githubusercontent.com/27893690/124362727-0a5b4e00-dc37-11eb-88b4-1cb3eb48af9c.png)
+
     - test3
     - test4
 
