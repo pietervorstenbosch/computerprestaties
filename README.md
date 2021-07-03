@@ -9,10 +9,17 @@
 ## Wat staat er in de GitHub Computerprestaties
 - Map Docker met de dockerfile voor de Standaard Testomgeving
 - Map Scripts met de volgende subdirectories:
-- test1
-- test2
-- test3
-- test4
+    - test1
+         -   matrix1024.c
+         -   matrix1024.java
+         -   matrix1024.py
+         -    
+         -   matrix2048.c
+         -   matrix2048.java
+         -   matrix2048.py   
+    - test2
+    - test3
+    - test4
 
 
 - 
