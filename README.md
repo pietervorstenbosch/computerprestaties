@@ -68,7 +68,7 @@ Je zet de container (De Standaard testomgeving) aan met het volgende commando
 ```bash
 docker run --cpus=1 --memory=3g -it computerprestaties bash
 Voor Test 4 Geef op de X het aantal cores weer dat je aan de recourses wel toewijzen.
-docker run --cpus=docker run --cpus=X --memory=3g -it computerprestaties bash
+docker run --cpus=X --memory=3g -it computerprestaties bash
 ```
 Hierna krijg je een shell prompt van de ubuntu container (je eigen linux server). Je wordt afgeleverd in de `/opt/scripts` directory en kan de testen gaan uitvoeren.
 
@@ -97,7 +97,7 @@ python3.8 test-1/matrix1024.py
 clang -O3 -o matrix1024 test-1/matrix1024.c && ./matrix1024
 ```
 ### Testen van de scripts met n=2048
-Gebruik dezelfde soort commando's maar de scripts met een grotere N (n=2048). Let op de testen duren echt langer.
+Gebruik dezelfde soort commando's maar de scripts met een grotere N (n=2048). Let op! de testen duren echt langer.
 
 Je kan met de resources spelen om te kijken naar de effecten. Die Resources vind je in Docker->Preferences->Resources
 Probeer ook eens geen optimalisatie toe te passen en kijk naar het resultaat.
