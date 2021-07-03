@@ -17,7 +17,8 @@
          - matrix2048.c
          - matrix2048.java
          - matrix2048.py   
-    - test2
+
+    - test2 Welke volgorde in nesting is het snelst?
         - matrixIJK.c
         - matrixJIK.c
         - matrixJKI.c
@@ -25,25 +26,29 @@
         - matrixKIJ.c
         - matrixKJI.c
 
-![image](https://user-images.githubusercontent.com/27893690/124362727-0a5b4e00-dc37-11eb-88b4-1cb3eb48af9c.png)
-
-    - test3
-    - test4
-
-
-- 
-- programma's
-(Matrixberekening met n=1024)
-  matrix.c
-  matrix.java
-  matrix.py
+    - test3 Tiling
+        -   S is grootte tile: S=4; S=8; S=16; S=32; S=64; S=128
+           - matrix_tile_4.c
+           - matrix_tile_8.c
+           - matrix_tile_16.c
+           - matrix_tile_32.c
+           - matrix_tile_64.c
+           - matrix_tile_128.c
+           
+    - test4 Parallel processing in 1 loop!
+         - IJK_matrix_i_loop.c
+         - IJK_ matrix_j_loop.c
+         - IJK¬_matrix_k_loop.c
+         - IKJ_matrix_i_loop.c
+         - IKJ_ matrix_j_loop.c
+         - IJK_matrix_k_loop
 - README.md
     
 ## Docker installeren
 - Docker downloaden: https://www.docker.com/products/docker-desktop.
 - Docker Installeren voor Windows of Mac.
 - Werken vanuit Terminal (Mac) of Terminal (Windows, PowerShell) 
- Voor Windows Update naar WSL2 gebruik de aanwijzingen op de site: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+Voor Windows Update naar WSL2 gebruik de aanwijzingen op de site: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 ## Opbouwen van de container (Standaard Testomgeving)
 De Dockerfile is om de container te bouwen. Zorg dat je pad in de terminal wijst naar de subdirectorie computerprestaties. Het commando dat begint met: docker build.... bouwt de container op
@@ -62,6 +67,8 @@ docker build . -f docker/Dockerfile -t computerprestaties
 Je zet de container (De Standaard testomgeving) aan met het volgende commando
 ```bash
 docker run --cpus=1 --memory=3g -it computerprestaties bash
+Voor Test 4 Geef op de X het aantal cores weer dat je aan de recourses wel toewijzen.
+docker run --cpus=docker run --cpus=X --memory=3g -it computerprestaties bash
 ```
 Hierna krijg je een shell prompt van de ubuntu container (je eigen linux server). Je wordt afgeleverd in de `/opt/scripts` directory en kan de testen gaan uitvoeren.
 
