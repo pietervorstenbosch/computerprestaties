@@ -115,7 +115,7 @@ test-3
 ```
 ## Test 4: Parallel processing in 1 loop
 We gaan gebruik maken van parallelle processing m.b.v. OpenCilk. Dat kan natuurlijk alleen als je een machine hebt met een processor met meerdere cores. We kijken naar twee varianten IJK volgorde en de IKJ volgorde van de loop.
-Uit Test 2 heb je gemerkt dat de IJK variant behoorlijk trager is dan de IKJ variant. We gaan voor beide varianten kijken wat de snelheidswinst is. 
+Uit Test 2 heb je gemerkt dat de IJK variant behoorlijk trager is dan de IKJ variant. We gaan voor beide varianten kijken wat de snelheidswinst is als ke de eerste loop, de tweede loop en de derde loop parallel laat verlopen.
 
 ```bash
 clang -o matrix_i_loop -fopencilk -O3 test-4/matrix_i_loop.c && ./matrix_i_loop
