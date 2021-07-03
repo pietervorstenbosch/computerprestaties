@@ -5,12 +5,18 @@
 - Opbouwen van de container (Standaard Testomgeving)
 - Starten van de container en testen
     - Commando's om de verschillende talen te testen 
-- Direct draaien van de testen (je hoeft niet in de container te werken) 
-    - Commando's om de verschillende talen te testen 
-    
+
 ## Wat staat er in de GitHub Computerprestaties
 - Map Docker met de dockerfile voor de Standaard Testomgeving
-- Map Scripts met de volgende programma's
+- Map Scripts met de volgende subdirectories:
+- test1
+- test2
+- test3
+- test4
+
+
+- 
+- programma's
 (Matrixberekening met n=1024)
   matrix.c
   matrix.java
