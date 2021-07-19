@@ -42,7 +42,7 @@
          - IKJ_matrix_i_loop.c
          - IKJ_ matrix_j_loop.c
          - IJK_matrix_k_loop
-- README.md
+- README.md (deze file)
     
 ## Docker installeren
 - Docker downloaden: https://www.docker.com/products/docker-desktop.
@@ -108,6 +108,7 @@ Geen Optimalisatie:
 ```bash
 clang -o matrix1024 test-1/matrix1024.c && ./matrix1024
 ```
+
 ## Test 2: Welke volgorde in nesting is het snelst?
 We gaan de nesting testen met de taal C en n=2048.
 
@@ -126,6 +127,7 @@ test-2
 |-- matrixKIJ.c
 `-- matrixKJI.c
 ```
+
 ## Test 3: Tiling
 We gaan tiling testen met de taal C, n=2048 en verschillende tile maten.
 
@@ -136,18 +138,19 @@ Test nu ook de andere tile grootes in de directory `test-3` met een soortgelijk 
 
 ```bash
 test-3
+|-- matrix_tile_4.c
+|-- matrix_tile_8.c
 |-- matrix_tile_16.c
 |-- matrix_tile_32.c
-|-- matrix_tile_4.c
 |-- matrix_tile_64.c
-`-- matrix_tile_8.c
+`-- matrix_tile_128.c
 ```
+
 ## Test 4: Parallel processing in 1 loop
 We gaan gebruik maken van parallelle processing m.b.v. OpenCilk. Dat kan natuurlijk alleen als je een machine hebt met een processor met meerdere cores. We kijken naar twee varianten IJK volgorde en de IKJ volgorde van de loop.
 Uit Test 2 heb je gemerkt dat de IJK variant behoorlijk trager is dan de IKJ variant. We gaan voor beide varianten kijken wat de snelheidswinst is als ke de eerste loop, de tweede loop en de derde loop parallel laat verlopen.
 
 Het commando om de test van IKJ variant de eerste (i) loop met meerdere cores te laten draaien is:
-
 ```bash
 clang -o IKJ_matrix_i_loop -fopencilk -O3 test-4/IKJ_matrix_i_loop.c && ./IKJ_matrix_i_loop
 ```
