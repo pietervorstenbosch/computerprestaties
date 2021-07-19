@@ -146,6 +146,13 @@ test-3
 We gaan gebruik maken van parallelle processing m.b.v. OpenCilk. Dat kan natuurlijk alleen als je een machine hebt met een processor met meerdere cores. We kijken naar twee varianten IJK volgorde en de IKJ volgorde van de loop.
 Uit Test 2 heb je gemerkt dat de IJK variant behoorlijk trager is dan de IKJ variant. We gaan voor beide varianten kijken wat de snelheidswinst is als ke de eerste loop, de tweede loop en de derde loop parallel laat verlopen.
 
+Het commando om de test van IKJ variant de eerste (i) loop met meerdere cores te laten draaien is:
+
 ```bash
 clang -o IKJ_matrix_i_loop -fopencilk -O3 test-4/IKJ_matrix_i_loop.c && ./IKJ_matrix_i_loop
 ```
+Het commando om de test van IKJ variant de tweede (k) loop met meerdere cores te laten draaien is:
+```bash
+clang -o IKJ_matrix_k_loop -fopencilk -O3 test-4/IKJ_matrix_k_loop.c && ./IKJ_matrix_k_loop
+```
+Leid uit deze twee commando's de andere af en voer de volledige test uit.
