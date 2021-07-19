@@ -27,13 +27,13 @@
         - matrixKJI.c
 
     - test3 Tiling
-        -   S is grootte tile: S=4; S=8; S=16; S=32; S=64; S=128
-           - matrix_tile_4.c
-           - matrix_tile_8.c
-           - matrix_tile_16.c
-           - matrix_tile_32.c
-           - matrix_tile_64.c
-           - matrix_tile_128.c
+        - S is grootte van de tile: S=4; S=8; S=16; S=32; S=64; S=128
+        - matrix_tile_4.c
+        - matrix_tile_8.c
+        - matrix_tile_16.c
+        - matrix_tile_32.c
+        - matrix_tile_64.c
+        - matrix_tile_128.c
            
     - test4 Parallel processing in 1 loop!
          - IJK_matrix_i_loop.c
