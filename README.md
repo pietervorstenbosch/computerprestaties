@@ -149,6 +149,7 @@ test-3
 ## Test 4: Parallel processing in 1 loop
 We gaan gebruik maken van parallelle processing m.b.v. OpenCilk. Dat kan natuurlijk alleen als je een machine hebt met een processor met meerdere cores. We kijken naar twee varianten IJK volgorde en de IKJ volgorde van de loop.
 Uit Test 2 heb je gemerkt dat de IJK variant behoorlijk trager is dan de IKJ variant. We gaan voor beide varianten kijken wat de snelheidswinst is als ke de eerste loop, de tweede loop en de derde loop parallel laat verlopen.
+Hierbij moet je natuurlijk wel de recourses m.b.t. het aantal cores verhogen om het effect te zien.
 
 Het commando om de test van IKJ variant de eerste (i) loop met meerdere cores te laten draaien is:
 ```bash
