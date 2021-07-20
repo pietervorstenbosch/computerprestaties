@@ -53,8 +53,8 @@ Voor Windows Update naar WSL2 gebruik de aanwijzingen op de site: https://docs.m
 ## Opbouwen van de container (Standaard Testomgeving)
 De Dockerfile is om de container te bouwen. Zorg dat je pad in de terminal wijst naar de subdirectorie computerprestaties. Het commando dat begint met: docker build.... bouwt de container op
 
-### Werken met OpenCilk (c multi-threading)
-Om te kunnen werken met de OpenCilk base container moeten we eerst de container in onze lokale docker registry laden. We doen dit door eerst de OpenCilk image te downloaden (https://github.com/OpenCilk/opencilk-project/releases/download/opencilk%2Fv1.0/docker-opencilk-v1.0.tar.gz) en daarna deze met het `docker load` commando in te laden:
+### Werken met Cilk (c multi-threading)
+Om te kunnen werken met de (Open)Cilk base container moeten we eerst de container in onze lokale docker registry laden. We doen dit door eerst de Cilk image te downloaden (https://github.com/OpenCilk/opencilk-project/releases/download/opencilk%2Fv1.0/docker-opencilk-v1.0.tar.gz) en daarna deze met het `docker load` commando in te laden:
 
 ```bash
 docker load < /path/to/docker-opencilk-v1.0.tar.gz
