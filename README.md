@@ -55,10 +55,15 @@ De Dockerfile is om de container te bouwen. Zorg dat je pad in de terminal wijst
 
 ### Werken met Cilk (c multi-threading)
 Om te kunnen werken met de (Open)Cilk base container moeten we eerst de container in onze lokale docker registry laden. We doen dit door eerst de Cilk image te downloaden (https://github.com/OpenCilk/opencilk-project/releases/download/opencilk%2Fv1.0/docker-opencilk-v1.0.tar.gz) en daarna deze met het `docker load` commando in te laden:
-
+Commando voor MacOS (OpenCilk image opnemen in Docker):
 ```bash
 docker load < /path/to/docker-opencilk-v1.0.tar.gz
 ```
+Commando voor Windows (OpenCilk image opnemen in Docker):
+```bash
+docker load -i /path/to/docker-opencilk-v1.0.tar.gz
+```
+Commando om de container op te bouwen:
 ```bash
 cd /path/to/git/computerprestaties
 docker build . -f docker/Dockerfile -t computerprestaties
